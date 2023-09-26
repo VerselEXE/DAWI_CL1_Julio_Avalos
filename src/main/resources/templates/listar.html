@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container mt-4">
+			<h1>CL1 DAW I</h1>
+			<h2>Clientes</h2>
+			<a th:href="@{nuevo}" class="btn btn-primary">Nuevo Cliente</a>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>NOMBRES</th>
+						<th>APELLIDOS</th>
+						<th>CORREO</th>
+						<th>FECHA NACIMIENTO</th>
+						<th>DNI</th>
+						<th>CATEGORIA</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="reg:${colaboradores}">
+						<td th:text="${reg.idcliente}"></td>
+						<td th:text="${reg.nombre}"></td>
+						<td th:text="${reg.apellido}"></td>
+						<td th:text="${reg.correo}"></td>
+						<td th:text="${reg.fechanacimiento}"></td>
+						<td th:text="${reg.dni}"></td>
+						<td th:text="${reg.idcategoria}"></td>						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
